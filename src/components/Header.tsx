@@ -5,11 +5,20 @@ import { Theme, Language } from '../types';
 interface HeaderProps {
   theme: Theme;
   language: Language;
+  currentPage: 'home' | 'courses' | 'documentation';
   onThemeToggle: () => void;
   onLanguageChange: (lang: Language) => void;
+  onNavigate: (page: 'home' | 'courses' | 'documentation') => void;
 }
 
-export default function Header({ theme, language, onThemeToggle, onLanguageChange }: HeaderProps) {
+export default function Header({ 
+  theme, 
+  language, 
+  currentPage,
+  onThemeToggle, 
+  onLanguageChange,
+  onNavigate 
+}: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
@@ -17,20 +26,42 @@ export default function Header({ theme, language, onThemeToggle, onLanguageChang
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <a href="/" className="flex items-center gap-2">
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('home');
+              }} 
+              className="flex items-center gap-2"
+            >
               <span className="text-2xl font-bold">
                 WebAr
               </span>
             </a>
             
             <div className="hidden md:flex items-center gap-6">
-              <a href="/tutorials" className="text-sm hover:text-gray-600 dark:hover:text-gray-300">
-                {language === 'ar' ? 'الدروس' : 'Tutorials'}
+              <a 
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('courses');
+                }}
+                className={`text-sm hover:text-gray-600 dark:hover:text-gray-300 ${
+                  currentPage === 'courses' ? 'text-primary-600 dark:text-primary-400' : ''
+                }`}
+              >
+                {language === 'ar' ? 'الدروس' : 'Courses'}
               </a>
-              <a href="/exercises" className="text-sm hover:text-gray-600 dark:hover:text-gray-300">
-                {language === 'ar' ? 'التمارين' : 'Exercises'}
-              </a>
-              <a href="/documentation" className="text-sm hover:text-gray-600 dark:hover:text-gray-300">
+              <a 
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('documentation');
+                }}
+                className={`text-sm hover:text-gray-600 dark:hover:text-gray-300 ${
+                  currentPage === 'documentation' ? 'text-primary-600 dark:text-primary-400' : ''
+                }`}
+              >
                 {language === 'ar' ? 'التوثيق' : 'Documentation'}
               </a>
             </div>

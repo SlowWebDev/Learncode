@@ -1,10 +1,9 @@
 import React from 'react';
-import { Github, Twitter } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { FooterLink, Language } from '../types';
 
 const socialLinks: FooterLink[] = [
-  { id: 'github', label: 'GitHub', labelAr: 'جيثهب', href: 'https://github.com', icon: Github },
-  { id: 'twitter', label: 'Twitter', labelAr: 'تويتر', href: 'https://twitter.com', icon: Twitter },
+  { id: 'github', label: 'GitHub', labelAr: 'جيثهب', href: 'https://github.com/SlowWebDev/Learncode', icon: Github },
 ];
 
 

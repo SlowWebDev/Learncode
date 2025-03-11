@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 interface HeroProps {
   language: Language;
+  onStartLearning: () => void;
 }
 
-export default function Hero({ language }: HeroProps) {
+export default function Hero({ language, onStartLearning }: HeroProps) {
   const { t } = useTranslation();
   
   return (
@@ -25,7 +26,10 @@ export default function Hero({ language }: HeroProps) {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center content-spacing">
-            <button className="px-8 py-4 rounded-lg bg-primary hover:bg-primary-dark text-white flex items-center justify-center gap-2 transform hover:scale-105 transition">
+            <button 
+              onClick={onStartLearning}
+              className="px-8 py-4 rounded-lg bg-primary hover:bg-primary-dark text-white flex items-center justify-center gap-2 transform hover:scale-105 transition"
+            >
               <Code2 className="w-5 h-5" />
               <span className="text-direction">{t('hero.startLearning')}</span>
             </button>
@@ -33,15 +37,15 @@ export default function Hero({ language }: HeroProps) {
           
           <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">50K+</span>
+              <span className="font-bold text-2xl text-primary">0+</span>
               <span className="text-direction">{t('hero.stats.learners')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">100+</span>
+              <span className="font-bold text-2xl text-primary">0+</span>
               <span className="text-direction">{t('hero.stats.lessons')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">2</span>
+              <span className="font-bold text-2xl text-primary">0</span>
               <span className="text-direction">{t('hero.stats.languages')}</span>
             </div>
           </div>

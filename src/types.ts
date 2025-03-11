@@ -1,3 +1,5 @@
+import { DivideIcon as LucideIcon } from 'lucide-react';
+
 export type Course = {
   id: string;
   title: string;
@@ -40,4 +42,31 @@ export type Direction = 'ltr' | 'rtl';
 export interface LayoutProps {
   language: Language;
   children: React.ReactNode;
+}
+
+export interface Lesson {
+  id: string;
+  number: number;
+  title: string;
+  titleAr: string;
+  description: string;
+  descriptionAr: string;
+  content: string;
+  contentAr: string;
+  examples: CodeExample[];
+  completed?: boolean;
+}
+
+export interface CodeExample {
+  id: string;
+  title: string;
+  code: string;
+  explanation: string;
+  explanationAr: string;
+}
+
+export interface CourseProgress {
+  totalLessons: number;
+  completedLessons: number;
+  currentLesson: number;
 }

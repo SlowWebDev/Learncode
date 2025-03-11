@@ -6,9 +6,10 @@ import { useTranslation } from 'react-i18next';
 interface CourseCardProps {
   course: Course;
   language: Language;
+  onStartCourse: (courseId: string) => void;
 }
 
-export default function CourseCard({ course, language }: CourseCardProps) {
+export default function CourseCard({ course, language, onStartCourse }: CourseCardProps) {
   const { t } = useTranslation();
 
   const formatNumber = (num: number) => {
@@ -68,7 +69,10 @@ export default function CourseCard({ course, language }: CourseCardProps) {
         </div>
       </div>
 
-      <button className="btn btn-primary w-full flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+      <button 
+        onClick={() => onStartCourse(course.id)}
+        className="btn btn-primary w-full flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
+      >
         <span className="text-direction font-medium">
           {t('courses.startLearning')}
         </span>

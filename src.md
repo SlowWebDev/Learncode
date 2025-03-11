@@ -1,0 +1,47 @@
+```
+└── 📁Learnproject
+    └── 📁src
+        └── App.tsx
+        └── 📁components
+            └── AnimatedSection.tsx
+            └── CodeEditor.tsx
+            └── CourseCard.tsx
+            └── CourseCatalog.tsx
+            └── Documentation.tsx
+            └── Footer.tsx
+            └── Header.tsx
+            └── Hero.tsx
+            └── LanguageToggle.tsx
+            └── SectionDivider.tsx
+            └── TechnologyCard.tsx
+            └── TechnologyGrid.tsx
+        └── 📁data
+            └── courses.ts
+            └── htmlLessons.ts
+            └── technologies.ts
+        └── i18n.ts
+        └── index.css
+        └── 📁locales
+            └── ar.json
+            └── en.json
+        └── main.tsx
+        └── 📁pages
+            └── Courses.tsx
+            └── Documentation.tsx
+            └── Home.tsx
+            └── 📁html
+                └── HTMLCourse.tsx
+        └── types.ts
+        └── vite-env.d.ts
+    └── .gitignore
+    └── eslint.config.js
+    └── index.html
+    └── package-lock.json
+    └── package.json
+    └── postcss.config.js
+    └── tailwind.config.js
+    └── tsconfig.app.json
+    └── tsconfig.json
+    └── tsconfig.node.json
+    └── vite.config.ts
+```

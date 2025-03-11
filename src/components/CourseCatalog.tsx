@@ -9,9 +9,10 @@ import SectionDivider from './SectionDivider';
 
 interface CourseCatalogProps {
   language: Language;
+  onStartCourse: (courseId: string) => void;
 }
 
-export default function CourseCatalog({ language }: CourseCatalogProps) {
+export default function CourseCatalog({ language, onStartCourse }: CourseCatalogProps) {
   const [activeCategory, setActiveCategory] = useState<'all' | 'frontend' | 'backend' | 'database'>('all');
   const { t } = useTranslation();
 
@@ -65,7 +66,11 @@ export default function CourseCatalog({ language }: CourseCatalogProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredCourses.map((course, index) => (
               <AnimatedSection key={course.id} delay={300 + index * 100}>
-                <CourseCard course={course} language={language} />
+                <CourseCard 
+                  course={course} 
+                  language={language} 
+                  onStartCourse={onStartCourse}
+                />
               </AnimatedSection>
             ))}
           </div>
