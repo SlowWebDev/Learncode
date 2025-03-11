@@ -19,7 +19,11 @@ export default function TechnologyCard({ technology, language }: TechnologyCardP
       
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <span className="text-4xl">{technology.icon}</span>
+          <img 
+            src={technology.icon} 
+            alt={`${name} logo`} 
+            className="w-12 h-12 object-contain"
+          />
           <span className={`px-3 py-1 rounded-full text-sm bg-${technology.color}-100 dark:bg-${technology.color}-900 text-${technology.color}-800 dark:text-${technology.color}-200`}>
             {technology.level}
           </span>

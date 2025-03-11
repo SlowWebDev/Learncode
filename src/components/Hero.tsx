@@ -33,15 +33,15 @@ export default function Hero({ language }: HeroProps) {
           
           <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0+</span>
+              <span className="font-bold text-2xl text-primary">50K+</span>
               <span className="text-direction">{t('hero.stats.learners')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0+</span>
+              <span className="font-bold text-2xl text-primary">100+</span>
               <span className="text-direction">{t('hero.stats.lessons')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0</span>
+              <span className="font-bold text-2xl text-primary">2</span>
               <span className="text-direction">{t('hero.stats.languages')}</span>
             </div>
           </div>

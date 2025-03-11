@@ -18,7 +18,9 @@ i18n
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
-    }
+    },
+    // Preserve layout direction
+    dir: () => 'ltr'
   });
 
 export default i18n;

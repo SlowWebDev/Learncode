@@ -15,8 +15,9 @@ function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
+    // Only change text direction, not layout
+    document.documentElement.setAttribute('lang', language);
     document.documentElement.classList.toggle('dark', theme === 'dark');
-    document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
     i18n.changeLanguage(language);
   }, [theme, language, i18n]);
 

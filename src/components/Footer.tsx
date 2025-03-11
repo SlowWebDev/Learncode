@@ -7,12 +7,7 @@ const socialLinks: FooterLink[] = [
   { id: 'twitter', label: 'Twitter', labelAr: 'تويتر', href: 'https://twitter.com', icon: Twitter },
 ];
 
-const links: FooterLink[] = [
-  { id: 'about', label: 'About Us', labelAr: 'عن الموقع', href: '/about' },
-  { id: 'contact', label: 'Contact', labelAr: 'اتصل بنا', href: '/contact' },
-  { id: 'privacy', label: 'Privacy Policy', labelAr: 'سياسة الخصوصية', href: '/privacy' },
-  { id: 'terms', label: 'Terms of Service', labelAr: 'شروط الخدمة', href: '/terms' },
-];
+
 
 interface FooterProps {
   language: Language;
@@ -36,23 +31,6 @@ export default function Footer({ language }: FooterProps) {
             </p>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold mb-4">
-              {language === 'en' ? 'Quick Links' : 'روابط سريعة'}
-            </h4>
-            <ul className="space-y-2">
-              {links.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    {language === 'en' ? link.label : link.labelAr}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div>
             <h4 className="text-sm font-semibold mb-4">
