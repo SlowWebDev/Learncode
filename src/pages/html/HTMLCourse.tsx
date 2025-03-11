@@ -6,10 +6,9 @@ import CodeEditor from '../../components/CodeEditor';
 
 interface HTMLCourseProps {
   language: Language;
-  onBack?: () => void;
 }
 
-export default function HTMLCourse({ language, onBack }: HTMLCourseProps) {
+export default function HTMLCourse({ language }: HTMLCourseProps) {
   const [currentLesson, setCurrentLesson] = useState<number>(0);
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [progress, setProgress] = useState<CourseProgress>({
@@ -39,29 +38,21 @@ export default function HTMLCourse({ language, onBack }: HTMLCourseProps) {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center gap-4 mb-6">
-          <button
-            onClick={onBack}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            aria-label="Go back"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <h2 className="text-xl font-bold">
-            {language === 'ar' ? 'دورة HTML' : 'HTML Course'}
-          </h2>
-        </div>
         <div className="flex gap-6">
           {/* Collapsible Sidebar */}
           <div 
-                aria-label={isSidebarExpanded ? 'Collapse sidebar' : 'Expand sidebar'}
-              >
-                <ChevronLeft className={`w-5 h-5 transition-transform duration-300 ${
-                  isSidebarExpanded ? '' : 'rotate-180'
-                }`} />
-              </button>
+            className={`transition-all duration-300 bg-white dark:bg-gray-800 rounded-xl shadow-lg h-[calc(100vh-8rem)] sticky top-24 overflow-hidden ${
+              isSidebarExpanded ? 'w-72' : 'w-16'
+            }`}
+          >
+            <div className="p-4 border-b dark:border-gray-700">
+              <h2 className={`text-xl font-bold transition-opacity duration-300 ${
+                isSidebarExpanded ? 'opacity-100' : 'opacity-0'
+              }`}>
+                {language === 'ar' ? 'دورة HTML' : 'HTML Course'}
+              </h2>
             </div>
 
             <div className={`p-4 ${isSidebarExpanded ? '' : 'hidden'}`}>
