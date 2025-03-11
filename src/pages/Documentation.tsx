@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
-import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, Menu } from 'lucide-react';
 
 type DocSection = 'html' | 'css' | 'javascript' | 'react' | 'nodejs';
 
@@ -154,9 +154,11 @@ export default function DocumentationPage({ language }: { language: Language }) 
   return (
     <main className="min-h-screen pt-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-12">
-        <div className="flex gap-8">
+        <div className="flex relative">
           {/* Sidebar Navigation */}
-          <div className={`w-64 flex-shrink-0 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <div className={`w-64 flex-shrink-0 transition-all duration-300 ${
+            isSidebarOpen ? 'translate-x-0 mr-8' : '-translate-x-full w-0 mr-0'
+          }`}>
             <div className="sticky top-24 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
               <div className="p-4 border-b dark:border-gray-700">
                 <h2 className="text-lg font-semibold">
@@ -183,28 +185,28 @@ export default function DocumentationPage({ language }: { language: Language }) 
             </div>
           </div>
 
-          {/* Toggle Button */}
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
-            aria-label="Toggle sidebar"
-          >
-            {isSidebarOpen ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
-          </button>
-
           {/* Main Content */}
-          <div className="flex-1 max-w-3xl">
+          <div className="flex-1">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-              <div className="mb-8">
-                <h1 className="text-3xl font-bold">
-                  {currentContent && (language === 'ar' ? currentContent.titleAr : currentContent.title)}
-                </h1>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {language === 'ar' 
-                    ? `دليل شامل لعناصر ${currentContent?.titleAr} وخصائصها`
-                    : `A comprehensive guide to ${currentContent?.title} elements and their properties`
-                  }
-                </p>
+              {/* Toggle Button moved inside content */}
+              <div className="flex justify-between items-center mb-8">
+                <div>
+                  <h1 className="text-3xl font-bold">
+                    {currentContent && (language === 'ar' ? currentContent.titleAr : currentContent.title)}
+                  </h1>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {language === 'ar' 
+                      ? `دليل شامل لعناصر ${currentContent?.titleAr} وخصائصها`
+                      : `A comprehensive guide to ${currentContent?.title} elements and their properties`
+                    }
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <Menu className="w-5 h-5" />
+                </button>
               </div>
 
               <div className="space-y-6">
