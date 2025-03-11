@@ -9,8 +9,6 @@ export type Course = {
   icon: string;
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   category: 'frontend' | 'backend' | 'database';
-  students: number;
-  chapters: number;
   color: string;
 };
 

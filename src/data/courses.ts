@@ -10,10 +10,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
     color: 'orange',
     difficulty: 'Beginner',
-    category: 'frontend',
-    popular: true,
-    students: 15234789,
-    chapters: 42
+    category: 'frontend'
   },
   {
     id: 'css',
@@ -24,10 +21,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
     color: 'blue',
     difficulty: 'Beginner',
-    category: 'frontend',
-    popular: true,
-    students: 12345678,
-    chapters: 38
+    category: 'frontend'
   },
   {
     id: 'javascript',
@@ -38,10 +32,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     color: 'yellow',
     difficulty: 'Intermediate',
-    category: 'frontend',
-    popular: true,
-    students: 10234567,
-    chapters: 56
+    category: 'frontend'
   },
   {
     id: 'react',
@@ -52,10 +43,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     color: 'blue',
     difficulty: 'Intermediate',
-    category: 'frontend',
-    popular: true,
-    students: 6789012,
-    chapters: 46
+    category: 'frontend'
   },
   {
     id: 'node',
@@ -66,10 +54,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
     color: 'green',
     difficulty: 'Intermediate',
-    category: 'backend',
-    popular: true,
-    students: 5432109,
-    chapters: 44
+    category: 'backend'
   },
   {
     id: 'php',
@@ -80,10 +65,7 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
     color: 'purple',
     difficulty: 'Intermediate',
-    category: 'backend',
-    popular: false,
-    students: 4321098,
-    chapters: 52
+    category: 'backend'
   },
   {
     id: 'mysql',
@@ -94,9 +76,6 @@ export const courses: Course[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
     color: 'blue',
     difficulty: 'Intermediate',
-    category: 'database',
-    popular: true,
-    students: 7654321,
-    chapters: 35
+    category: 'database'
   }
 ];

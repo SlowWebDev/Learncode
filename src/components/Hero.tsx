@@ -34,21 +34,6 @@ export default function Hero({ language, onStartLearning }: HeroProps) {
               <span className="text-direction">{t('hero.startLearning')}</span>
             </button>
           </div>
-          
-          <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0+</span>
-              <span className="text-direction">{t('hero.stats.learners')}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0+</span>
-              <span className="text-direction">{t('hero.stats.lessons')}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-2xl text-primary">0</span>
-              <span className="text-direction">{t('hero.stats.languages')}</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

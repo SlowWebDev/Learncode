@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
-import { ChevronDown, Menu } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 type DocSection = 'html' | 'css' | 'javascript' | 'react' | 'nodejs';
 
@@ -156,7 +156,7 @@ export default function DocumentationPage({ language }: { language: Language }) 
       <div className="container mx-auto px-4 py-12">
         <div className="flex relative">
           {/* Sidebar Navigation */}
-          <div className={`w-64 flex-shrink-0 transition-all duration-300 ${
+          <div className={`w-64 flex-shrink-0 transition-transform duration-300 ${
             isSidebarOpen ? 'translate-x-0 mr-8' : '-translate-x-full w-0 mr-0'
           }`}>
             <div className="sticky top-24 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
@@ -188,7 +188,6 @@ export default function DocumentationPage({ language }: { language: Language }) 
           {/* Main Content */}
           <div className="flex-1">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-              {/* Toggle Button moved inside content */}
               <div className="flex justify-between items-center mb-8">
                 <div>
                   <h1 className="text-3xl font-bold">
@@ -201,12 +200,6 @@ export default function DocumentationPage({ language }: { language: Language }) 
                     }
                   </p>
                 </div>
-                <button
-                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                >
-                  <Menu className="w-5 h-5" />
-                </button>
               </div>
 
               <div className="space-y-6">

@@ -29,6 +29,10 @@ function App() {
     }
   };
 
+  const handleBack = () => {
+    setCurrentPage('courses');
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'courses':
@@ -36,7 +40,7 @@ function App() {
       case 'documentation':
         return <DocumentationPage language={language} />;
       case 'html-course':
-        return <HTMLCourse language={language} />;
+        return <HTMLCourse language={language} onBack={handleBack} />;
       default:
         return <Home language={language} onStartCourse={handleStartCourse} />;
     }

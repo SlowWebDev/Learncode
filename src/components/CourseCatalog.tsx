@@ -31,31 +31,33 @@ export default function CourseCatalog({ language, onStartCourse }: CourseCatalog
       <div className="bg-white dark:bg-black">
         <SectionDivider variant="wave" className="text-gray-50 dark:text-gray-900" />
       </div>
-      <section className="relative py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="py-20">
         <div className="container mx-auto px-4">
+          {/* Header */}
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-direction">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
               {t('courses.title')}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-direction">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t('courses.subtitle')}
             </p>
           </AnimatedSection>
 
+          {/* Category Filter */}
           <AnimatedSection delay={200} className="flex justify-center mb-12">
-            <div className="inline-flex rounded-lg border border-gray-200 dark:border-gray-700 p-1 bg-white dark:bg-gray-800">
+            <div className="inline-flex rounded-lg bg-white dark:bg-gray-800 shadow-lg p-1">
               {categories.map(category => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id as typeof activeCategory)}
-                  className={`flex items-center gap-2 px-6 py-2 rounded-md transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-6 py-2 rounded-lg transition-all duration-200 ${
                     activeCategory === category.id
-                      ? 'bg-primary text-white'
-                      : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-primary-500 text-white shadow-md'
+                      : 'hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   <category.icon className="w-4 h-4" />
-                  <span className="text-direction font-medium">
+                  <span className="font-medium">
                     {t(`courses.categories.${category.id}`)}
                   </span>
                 </button>
@@ -63,6 +65,7 @@ export default function CourseCatalog({ language, onStartCourse }: CourseCatalog
             </div>
           </AnimatedSection>
 
+          {/* Course Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredCourses.map((course, index) => (
               <AnimatedSection key={course.id} delay={300 + index * 100}>
@@ -75,7 +78,7 @@ export default function CourseCatalog({ language, onStartCourse }: CourseCatalog
             ))}
           </div>
         </div>
-      </section>
+      </div>
       <div className="bg-white dark:bg-black">
         <SectionDivider variant="wave" className="text-gray-50 dark:text-gray-900" flip />
       </div>

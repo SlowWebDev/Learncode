@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Users, BookOpen } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Course, Language } from '../types';
 import { useTranslation } from 'react-i18next';
 
@@ -11,16 +11,6 @@ interface CourseCardProps {
 
 export default function CourseCard({ course, language, onStartCourse }: CourseCardProps) {
   const { t } = useTranslation();
-
-  const formatNumber = (num: number) => {
-    if (num >= 1000000) {
-      return `${(num / 1000000).toFixed(1)}M`;
-    }
-    if (num >= 1000) {
-      return `${(num / 1000).toFixed(1)}K`;
-    }
-    return num.toString();
-  };
 
   const difficultyColors = {
     Beginner: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300',
@@ -51,21 +41,6 @@ export default function CourseCard({ course, language, onStartCourse }: CourseCa
           <p className="text-sm text-neutral-600 dark:text-neutral-400 text-direction">
             {language === 'ar' ? course.descriptionAr : course.description}
           </p>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-4 mb-6 text-sm text-neutral-600 dark:text-neutral-400">
-        <div className="flex items-center gap-2">
-          <Users className="w-4 h-4 flex-shrink-0" />
-          <span className="text-direction">
-            {formatNumber(course.students)} {t('courses.students')}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <BookOpen className="w-4 h-4 flex-shrink-0" />
-          <span className="text-direction">
-            {course.chapters} {t('courses.chapters')}
-          </span>
         </div>
       </div>
 
