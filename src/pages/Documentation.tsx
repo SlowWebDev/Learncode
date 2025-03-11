@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 type DocSection = 'html' | 'css' | 'javascript' | 'react' | 'nodejs';
 
@@ -147,6 +147,7 @@ function ElementSection({ element, language }: ElementSectionProps) {
 
 export default function DocumentationPage({ language }: { language: Language }) {
   const [activeSection, setActiveSection] = useState<DocSection>('html');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const currentContent = documentationContent.find(content => content.id === activeSection);
 
@@ -155,7 +156,7 @@ export default function DocumentationPage({ language }: { language: Language }) 
       <div className="container mx-auto px-4 py-12">
         <div className="flex gap-8">
           {/* Sidebar Navigation */}
-          <div className="w-64 flex-shrink-0">
+          <div className={`w-64 flex-shrink-0 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className="sticky top-24 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
               <div className="p-4 border-b dark:border-gray-700">
                 <h2 className="text-lg font-semibold">
@@ -181,6 +182,15 @@ export default function DocumentationPage({ language }: { language: Language }) 
               </nav>
             </div>
           </div>
+
+          {/* Toggle Button */}
+          <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            aria-label="Toggle sidebar"
+          >
+            {isSidebarOpen ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
+          </button>
 
           {/* Main Content */}
           <div className="flex-1 max-w-3xl">
