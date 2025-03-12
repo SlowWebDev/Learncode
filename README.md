@@ -60,8 +60,7 @@ git push origin my-new-feature
 
 ---
 
-## 🌍 تغيير اللغة
-[![English](https://img.shields.io/badge/Language-English-blue)](README_EN.md)  
+## 🌍 تغيير اللغة![Learn Web Now](./image.png)
 [![العربية](https://img.shields.io/badge/اللغة-العربية-green)](README.md)
 
 ---
