@@ -1,1 +1,23 @@
-{}
+{
+  "id": "html",
+  "title": "HTML5",
+  "titleAr": "HTML5",
+  "description": "Learn the foundation of web development with HTML5",
+  "descriptionAr": "تعلم أساسيات تطوير الويب مع HTML5",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  "color": "orange",
+  "difficulty": "Beginner",
+  "category": "frontend",
+  "lessons": [
+    {
+      "id": "html-intro",
+      "title": "Introduction to HTML",
+      "titleAr": "مقدمة إلى HTML",
+      "description": "Learn the basics of HTML and understand how web pages are structured",
+      "descriptionAr": "تعلم أساسيات HTML وفهم كيفية هيكلة صفحات الويب",
+      "videoUrl": "https://www.youtube.com/embed/qz0aGYrrlhU",
+      "duration": "11:25",
+      "order": 1
+    }
+  ]
+}

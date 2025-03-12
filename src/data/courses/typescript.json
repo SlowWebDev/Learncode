@@ -1,1 +1,23 @@
-{}
+{
+  "id": "typescript",
+  "title": "TypeScript",
+  "titleAr": "تايب سكريبت",
+  "description": "Learn TypeScript for type-safe JavaScript development",
+  "descriptionAr": "تعلم TypeScript لتطوير JavaScript آمن الأنواع",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  "color": "blue",
+  "difficulty": "Intermediate",
+  "category": "frontend",
+  "lessons": [
+    {
+      "id": "ts-intro",
+      "title": "Introduction to TypeScript",
+      "titleAr": "مقدمة إلى TypeScript",
+      "description": "Learn the basics of TypeScript and its benefits",
+      "descriptionAr": "تعلم أساسيات TypeScript وفوائده",
+      "videoUrl": "https://www.youtube.com/embed/BwuLxPH8IDs",
+      "duration": "13:45",
+      "order": 1
+    }
+  ]
+}

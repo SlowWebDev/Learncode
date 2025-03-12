@@ -1,1 +1,23 @@
-{}
+{
+  "id": "react",
+  "title": "React",
+  "titleAr": "رياكت",
+  "description": "Build modern web applications with React",
+  "descriptionAr": "بناء تطبيقات الويب الحديثة باستخدام React",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "color": "cyan",
+  "difficulty": "Intermediate",
+  "category": "frontend",
+  "lessons": [
+    {
+      "id": "react-intro",
+      "title": "Introduction to React",
+      "titleAr": "مقدمة إلى React",
+      "description": "Learn the basics of React and component-based development",
+      "descriptionAr": "تعلم أساسيات React والتطوير القائم على المكونات",
+      "videoUrl": "https://www.youtube.com/embed/Ke90Tje7VS0",
+      "duration": "16:28",
+      "order": 1
+    }
+  ]
+}

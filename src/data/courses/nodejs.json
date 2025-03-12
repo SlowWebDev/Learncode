@@ -1,1 +1,23 @@
-{}
+{
+  "id": "nodejs",
+  "title": "Node.js",
+  "titleAr": "نود جي إس",
+  "description": "Build server-side applications with Node.js",
+  "descriptionAr": "بناء تطبيقات جانب الخادم مع Node.js",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  "color": "green",
+  "difficulty": "Intermediate",
+  "category": "backend",
+  "lessons": [
+    {
+      "id": "nodejs-intro",
+      "title": "Introduction to Node.js",
+      "titleAr": "مقدمة إلى Node.js",
+      "description": "Learn the basics of Node.js and server-side JavaScript",
+      "descriptionAr": "تعلم أساسيات Node.js وجافا سكريبت جانب الخادم",
+      "videoUrl": "https://www.youtube.com/embed/TlB_eWDSMt4",
+      "duration": "12:17",
+      "order": 1
+    }
+  ]
+}

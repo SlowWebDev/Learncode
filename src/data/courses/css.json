@@ -1,1 +1,23 @@
-{}
+{
+  "id": "css",
+  "title": "CSS3",
+  "titleAr": "CSS3",
+  "description": "Master modern web styling and animations",
+  "descriptionAr": "إتقان تصميم الويب الحديث والرسوم المتحركة",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  "color": "blue",
+  "difficulty": "Beginner",
+  "category": "frontend",
+  "lessons": [
+    {
+      "id": "css-basics",
+      "title": "CSS Fundamentals",
+      "titleAr": "أساسيات CSS",
+      "description": "Learn the basics of CSS styling and selectors",
+      "descriptionAr": "تعلم أساسيات تنسيق CSS والمحددات",
+      "videoUrl": "https://www.youtube.com/embed/1PnVor36_40",
+      "duration": "15:32",
+      "order": 1
+    }
+  ]
+}

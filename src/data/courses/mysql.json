@@ -1,1 +1,23 @@
-{}
+{
+  "id": "mysql",
+  "title": "MySQL",
+  "titleAr": "ماي إس كيو إل",
+  "description": "Learn database management with MySQL",
+  "descriptionAr": "تعلم إدارة قواعد البيانات مع MySQL",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  "color": "blue",
+  "difficulty": "Intermediate",
+  "category": "database",
+  "lessons": [
+    {
+      "id": "mysql-intro",
+      "title": "Introduction to MySQL",
+      "titleAr": "مقدمة إلى MySQL",
+      "description": "Learn the basics of MySQL and database management",
+      "descriptionAr": "تعلم أساسيات MySQL وإدارة قواعد البيانات",
+      "videoUrl": "https://www.youtube.com/embed/7S_tz1z_5bA",
+      "duration": "14:52",
+      "order": 1
+    }
+  ]
+}
