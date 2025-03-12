@@ -10,6 +10,18 @@ export type Course = {
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
   category: 'frontend' | 'backend' | 'database';
   color: string;
+  videos: VideoLesson[];
+};
+
+export type VideoLesson = {
+  id: string;
+  title: string;
+  titleAr: string;
+  description: string;
+  descriptionAr: string;
+  videoUrl: string;
+  duration: string;
+  order: number;
 };
 
 export type Technology = {
@@ -31,7 +43,7 @@ export type Language = 'en' | 'ar';
 export type SearchResult = {
   id: string;
   title: string;
-  type: 'course' | 'tutorial' | 'documentation';
+  type: 'course' | 'tutorial';
   url: string;
 };
 
@@ -42,29 +54,22 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export interface Lesson {
-  id: string;
-  number: number;
-  title: string;
-  titleAr: string;
-  description: string;
-  descriptionAr: string;
-  content: string;
-  contentAr: string;
-  examples: CodeExample[];
-  completed?: boolean;
-}
-
-export interface CodeExample {
-  id: string;
-  title: string;
-  code: string;
-  explanation: string;
-  explanationAr: string;
-}
-
 export interface CourseProgress {
   totalLessons: number;
   completedLessons: number;
   currentLesson: number;
 }
+
+export interface FooterLink {
+  id: string;
+  label: string;
+  labelAr: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+export interface CourseData {
+  courses: Course[];
+}
+
+export type Page = 'home' | 'courses' | 'course-page' | 'dashboard';

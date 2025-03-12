@@ -19,40 +19,53 @@ export default function CourseCard({ course, language, onStartCourse }: CourseCa
   };
 
   return (
-    <div className="card card-hover p-6 group">
-      <div className="absolute top-0 right-0 px-3 py-1 m-4 text-xs font-medium rounded-full">
-        <span className={`${difficultyColors[course.difficulty]} px-3 py-1 rounded-full text-sm font-medium`}>
-          {t(`courses.difficulty.${course.difficulty.toLowerCase()}`)}
-        </span>
-      </div>
-
-      <div className="flex items-center gap-4 mb-6">
-        <div className="p-2 rounded-xl bg-neutral-100 dark:bg-neutral-800">
-          <img 
-            src={course.icon} 
-            alt={`${course.title} logo`}
-            className="w-12 h-12 object-contain"
-          />
+    <div className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300">
+      {/* Course Header */}
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="p-2 rounded-xl bg-gray-100 dark:bg-gray-700">
+            <img 
+              src={course.icon} 
+              alt={`${course.title} logo`}
+              className="w-12 h-12 object-contain"
+            />
+          </div>
+          <span className={`${difficultyColors[course.difficulty]} px-3 py-1 rounded-full text-sm font-medium`}>
+            {t(`courses.difficulty.${course.difficulty.toLowerCase()}`)}
+          </span>
         </div>
-        <div>
-          <h3 className="text-xl font-semibold text-direction">
-            {language === 'ar' ? course.titleAr : course.title}
-          </h3>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 text-direction">
-            {language === 'ar' ? course.descriptionAr : course.description}
-          </p>
-        </div>
-      </div>
 
-      <button 
-        onClick={() => onStartCourse(course.id)}
-        className="btn btn-primary w-full flex items-center justify-center gap-2 group-hover:translate-y-[-2px]"
-      >
-        <span className="text-direction font-medium">
-          {t('courses.startLearning')}
-        </span>
-        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-      </button>
+        <h3 className="text-xl font-semibold mb-2 text-direction">
+          {language === 'ar' ? course.titleAr : course.title}
+        </h3>
+        
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-direction">
+          {language === 'ar' ? course.descriptionAr : course.description}
+        </p>
+
+        <div className="space-y-2 mb-6">
+          {course.videos.slice(0, 2).map((video) => (
+            <div key={video.id} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <span className="truncate">{language === 'ar' ? video.titleAr : video.title}</span>
+            </div>
+          ))}
+          {course.videos.length > 2 && (
+            <p className="text-sm text-primary-600 dark:text-primary-400">
+              +{course.videos.length - 2} {language === 'ar' ? 'المزيد من الدروس' : 'more lessons'}
+            </p>
+          )}
+        </div>
+
+        <button 
+          onClick={() => onStartCourse(course.id)}
+          className="w-full py-2 px-4 bg-primary-600 hover:bg-primary-700 text-white rounded-lg flex items-center justify-center gap-2 transition-all duration-300 group-hover:transform group-hover:translate-y-[-2px]"
+        >
+          <span className="font-medium">
+            {t('courses.startLearning')}
+          </span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
+      </div>
     </div>
   );
 }

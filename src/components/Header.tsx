@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Menu, Search, Sun, Moon, Languages } from 'lucide-react';
-import { Theme, Language } from '../types';
+import { Menu, Search, Sun, Moon, Languages, Settings } from 'lucide-react';
+import { Theme, Language, Page } from '../types';
 
 interface HeaderProps {
   theme: Theme;
   language: Language;
-  currentPage: 'home' | 'courses' | 'documentation';
+  currentPage: Page;
   onThemeToggle: () => void;
   onLanguageChange: (lang: Language) => void;
-  onNavigate: (page: 'home' | 'courses' | 'documentation') => void;
+  onNavigate: (page: Page) => void;
+  onDashboard: () => void;
 }
 
 export default function Header({ 
@@ -17,7 +18,8 @@ export default function Header({
   currentPage,
   onThemeToggle, 
   onLanguageChange,
-  onNavigate 
+  onNavigate,
+  onDashboard
 }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -35,7 +37,7 @@ export default function Header({
               className="flex items-center gap-2"
             >
               <span className="text-2xl font-bold">
-                WebAr
+                Learncode
               </span>
             </a>
             
@@ -53,14 +55,10 @@ export default function Header({
                 {language === 'ar' ? 'الدروس' : 'Courses'}
               </a>
               <a 
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('documentation');
-                }}
-                className={`text-sm hover:text-gray-600 dark:hover:text-gray-300 ${
-                  currentPage === 'documentation' ? 'text-primary-600 dark:text-primary-400' : ''
-                }`}
+                href="https://www.w3schools.com/tags/default.asp" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm hover:text-gray-600 dark:hover:text-gray-300"
               >
                 {language === 'ar' ? 'التوثيق' : 'Documentation'}
               </a>
@@ -93,6 +91,14 @@ export default function Header({
               aria-label="Toggle language"
             >
               <Languages className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={onDashboard}
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              aria-label="Dashboard"
+            >
+              <Settings className="w-5 h-5" />
             </button>
 
             <button className="md:hidden p-2">

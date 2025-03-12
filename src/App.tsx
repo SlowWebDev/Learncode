@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Theme, Language } from './types';
+import { Theme, Language, Course, Page } from './types';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
-import DocumentationPage from './pages/Documentation';
-import HTMLCourse from './pages/html/HTMLCourse';
+import CoursePage from './pages/CoursePage';
+import Dashboard from './pages/Dashboard';
 import { useTranslation } from 'react-i18next';
+import { courses } from './data/courses';
 import './i18n';
-
-type Page = 'home' | 'courses' | 'documentation' | 'html-course';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [theme, setTheme] = useState<Theme>('light');
   const [language, setLanguage] = useState<Language>('en');
   const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -24,23 +25,32 @@ function App() {
   }, [theme, language, i18n]);
 
   const handleStartCourse = (courseId: string) => {
-    if (courseId === 'html') {
-      setCurrentPage('html-course');
+    const course = courses.find(c => c.id === courseId);
+    if (course) {
+      setSelectedCourse(course);
+      setCurrentPage('course-page');
     }
   };
 
   const handleBack = () => {
     setCurrentPage('courses');
+    setSelectedCourse(null);
   };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'courses':
         return <Courses language={language} onStartCourse={handleStartCourse} />;
-      case 'documentation':
-        return <DocumentationPage language={language} />;
-      case 'html-course':
-        return <HTMLCourse language={language} onBack={handleBack} />;
+      case 'course-page':
+        return selectedCourse ? (
+          <CoursePage 
+            course={selectedCourse} 
+            language={language} 
+            onBack={handleBack}
+          />
+        ) : null;
+      case 'dashboard':
+        return <Dashboard language={language} onBack={() => setCurrentPage('home')} />;
       default:
         return <Home language={language} onStartCourse={handleStartCourse} />;
     }
@@ -54,10 +64,12 @@ function App() {
         onThemeToggle={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         onLanguageChange={(lang) => setLanguage(lang)}
         onNavigate={(page) => setCurrentPage(page)}
-        currentPage={currentPage}
+        currentPage={currentPage === 'course-page' ? 'courses' : currentPage}
+        onDashboard={() => setCurrentPage('dashboard')}
       />
       {renderPage()}
       <Footer language={language} />
+      <Toaster position="bottom-right" />
     </div>
   );
 }
