@@ -1,7 +1,5 @@
 # Learn Web Now 🌐
 
-![Learn Web Now](https://imgur.com/a/rSMD0o5)
-
 ## 🌍 Change Language
 [![العربية](https://img.shields.io/badge/اللغة-العربية-green)](README.md)
 
@@ -23,6 +21,8 @@ You are here to help improve the website! 🎉 Feel free to modify and enhance i
 - **TypeScript** 📝 - A strongly typed JavaScript extension
 - **Node.js** 🌍 - JavaScript runtime for backend development
 - **Tailwind CSS** 🎨 - A utility-first CSS framework for fast styling
+- **Netlify** 🚀 - Fast and free website hosting
+
 ---
 
 ## 🏗️ How to Run the Project
@@ -61,6 +61,11 @@ git commit -m "UI improvements"
 git push origin my-new-feature
 ```
 4. **Create a Pull Request**, and your changes will be reviewed!
+
+---
+
+## 🖼️ Screenshot from the Website
+![Learn Web Now](https://imgur.com/a/rSMD0o5)
 
 ---
 
