@@ -1,6 +1,4 @@
-# Learn Web Now 🌐
 
-![Learn Web Now](https://imgur.com/a/rSMD0o5)
 
 ## 🚀 مرحبًا بكم في Learn Web Now!
 
