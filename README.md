@@ -59,7 +59,7 @@ git push origin my-new-feature
 4. **أنشئ طلب سحب (Pull Request)** وسيتم مراجعة التعديلات!
 
 ---
-[Learn Web Now]!(./image.png)
+[Learn Web Now] (./image.png)
 ## 🌍 تغيير اللغة!
 
 [![العربية](https://img.shields.io/badge/اللغة-العربية-green)](README.md)
