@@ -21,8 +21,6 @@ You are here to help improve the website! 🎉 Feel free to modify and enhance i
 - **TypeScript** 📝 - A strongly typed JavaScript extension
 - **Node.js** 🌍 - JavaScript runtime for backend development
 - **Tailwind CSS** 🎨 - A utility-first CSS framework for fast styling
-- **Netlify** 🚀 - Fast and free website hosting
-
 ---
 
 ## 🏗️ How to Run the Project
@@ -65,7 +63,7 @@ git push origin my-new-feature
 ---
 
 ## 🖼️ Screenshot from the Website
-![Learn Web Now](https://imgur.com/a/rSMD0o5)
+![Learn Web Now](./image.png)
 
 ---
 
